@@ -1,3 +1,4 @@
 #!/bin/sh
 cd /web
-../phantomjs main.js
+chmod +x /phantomjs
+/phantomjs main.js
