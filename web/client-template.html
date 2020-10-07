@@ -1,0 +1,44 @@
+<!--
+  This is the template for the HTML file that is sent back to the client,
+  when the input is a JATS file. 
+-->
+
+<html xmlns:mml="http://www.w3.org/1998/Math/MathML">
+  <head>
+    <script type="text/javascript" src="resources/jquery.js"></script>
+    <script type='text/javascript' src='resources/client.js'></script>
+
+    <!-- This gets the real MathJax URL at runtime. -->
+    <script type="text/javascript" src="$mathjax_url"></script>
+
+    <!-- MathJax should only render equations that appear inside the main table -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ elements: ['table']});
+    </script>
+    
+    <style type='text/css'>
+      table {
+        border-collapse: collapse;
+      }
+      th, td {
+        border: solid 1px black;
+        padding: .3em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RenderMath - client rendering</h1>
+    <p>Equations:</p>
+    <table id='table'>
+      <tr>
+        <th>Image ID</th>
+        <th>Math type</th>
+        <th>Rendered equation</th>
+      </tr>
+<!-- rows -->
+    </table>
+    <div id='sources' style='display: none;'>
+<!-- sources -->
+    </div>
+  </body>
+</html>

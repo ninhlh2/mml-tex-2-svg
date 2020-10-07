@@ -1,0 +1,119 @@
+# PMC Math Tool 2 example files
+
+- name: simple-tex
+  in-format: tex
+  description: Very simple LaTeX ("2^x")
+  filename: simple-tex.tex
+
+- name: simple-mml
+  in-format: mml
+  description: Very simple MathML ("1/N")
+  filename: simple-mml.mml
+
+- name: cauchy-integral
+  in-format: mml
+  description: Cauchy's integral formula
+  filename: cauchy-integral.mml
+
+- name: cauchy-schwarz
+  in-format: tex
+  description: The Cauchy-Schwarz inequality
+  filename: cauchy-schwarz.tex
+
+- name: christoffel-symbols
+  in-format: mml
+  description: Definition of Christoffel symbols
+  filename: christoffel-symbols.mml
+
+- name: coins
+  in-format: tex
+  description: The Lorentz equations
+  filename: coins.tex
+
+- name: cosines
+  in-format: mml
+  description: Double angle formula for Cosines
+  filename: cosines.mml
+
+- name: cross-product
+  in-format: tex
+  description: Cross product formula
+  filename: cross-product.tex
+
+- name: curl-vector-field
+  in-format: mml
+  description: Curl of a vector field
+  filename: curl-vector-field.mml
+
+- name: gauss-divergence
+  in-format: mml
+  description: Gauss' divergence theorem
+  filename: gauss-divergence.mml
+
+- name: sum
+  in-format: tex
+  description: Summation
+  filename: sum.tex
+
+- name: sum-displaystyle
+  in-format: tex
+  description: Summation, display style
+  filename: sum-displaystyle.tex
+
+- name: lorentz
+  in-format: tex
+  description: Lorenz equations
+  filename: lorentz.tex
+
+- name: maxwell
+  in-format: tex
+  description: Maxwell's equations
+  filename: maxwell.tex
+
+- name: quadratic
+  in-format: mml
+  description: Quadratic formula
+  filename: quadratic.mml
+
+- name: ramanujan
+  in-format: tex
+  description: An identity of Ramanujan
+  filename: ramanujan.tex
+
+- name: rogers-rmanujan
+  in-format: tex
+  description: A Rogers-Ramanujan identity
+  filename: rogers-rmanujan.tex
+
+- name: standard-deviation
+  in-format: mml
+  description: Standard deviation
+  filename: standard-deviation.mml
+
+- name: jats-no-equations
+  in-format: jats
+  description: JATS file without any equations
+  filename: jats-no-equations.nxml
+
+- name: jats-latex-one
+  in-format: jats
+  description: JATS file with one good LaTeX equations
+  filename: jats-latex-one.nxml
+
+- name: jats-latex-two
+  in-format: jats
+  description: JATS file with two good LaTeX equations
+  filename: jats-latex-two.nxml
+
+
+
+- name: jats-3479416
+  in-format: jats
+  description: Real JATS file, article 3479416 from BMC (MathML)
+  filename: jats-3479416.nxml
+
+- name: jats-2762331
+  in-format: jats
+  description: Real JATS file, article 2762331 from PLoS Currents (LaTeX)
+  filename: jats-2762331.nxml
+

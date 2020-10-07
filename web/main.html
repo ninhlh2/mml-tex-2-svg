@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+  This is the main test form page, that is passed to the client by default.
+-->
+<html>
+  <head>
+    <script>
+      var loc = window.location.toString();
+      if (loc.substr(-1) != '/') {
+        window.location = loc + '/';
+      }
+	  
+	  
+	  function loadImage(){		
+			var req = new XMLHttpRequest();
+			var url = $("#form").attr('action');
+			var method=$("#method").val();
+			var data= $("#form").serializeArray();
+			var jsonBody =  [];
+			data.forEach(function(element) {
+				var n=element["name"];
+				var v=element["value"];
+				var obj = {};
+				obj[n] = v;
+				jsonBody.push(obj);
+			});
+			//console.log(JSON.stringify(jsonBody));
+			url += "?q="+ encodeURIComponent($('#q').val());
+			
+			
+			req.open(method, url, false);
+			req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+
+			req.send(JSON.stringify(jsonBody));
+
+//			console.log(req.status);
+			$("#img").html(req.responseText);
+	
+	  }
+	  
+    </script>
+    <script type='text/javascript' src='resources/jquery.js'></script>
+    <script type='text/javascript' src='resources/js-yaml.min.js'></script>
+    <script type='text/javascript' src='resources/test.js'></script>
+
+    <style type='text/css'>
+      tr {
+        vertical-align: top;
+      }
+      th {
+        text-align: right;
+      }
+      td {
+        padding-bottom: 0.3em;
+      }
+      tr.button-row > td {
+        padding-top: 0.5em;
+      }
+      .disabled {
+        color: #AAA;
+      }
+	  
+	  
+	  .container {
+			display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+			display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+			display: -ms-flexbox;      /* TWEENER - IE 10 */
+			display: -webkit-flex;     /* NEW - Chrome */
+			display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+		}
+
+	.container div {
+		-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+		-moz-box-flex: 1;         /* OLD - Firefox 19- */
+		-webkit-flex: 1;          /* Chrome */
+		-ms-flex: 1;              /* IE 10 */
+		flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	}
+
+	.column_center {
+		-webkit-box-ordinal-group: 2;   /* OLD - iOS 6-, Safari 3.1-6 */
+		-moz-box-ordinal-group: 2;      /* OLD - Firefox 19- */
+		-ms-flex-order: 2;              /* TWEENER - IE 10 */
+		-webkit-order: 2;               /* NEW - Chrome */
+		order: 2;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	}
+	  
+    </style>
+  </head>
+  <body >
+     <h1>RenderMath</h1>
+ <div class="container">
+ <div class="column-left">
+ 
+    <p>Enter MathML, LaTeX in the content box below.</p>
+    <form id='form' method='POST' action=''>
+		<input type="hidden" id='latex-style-select' name="latex-style" value="text">	
+		<input id='max-width-input' type='hidden' name='width' value='621'/>
+		
+		<table>
+        <tr>
+          <td>
+            <textarea name='q' id='q' rows='10' cols='80'><math><mfrac><mn>1</mn><mi>N</mi></mfrac></math></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><label for='method'>HTTP method</label>
+            <select id='method'>
+              <option value='POST' >POST</option>
+              <option value='GET' selected='selected'>GET</option>
+            </select>
+          </td>
+        </tr>
+        <tr class='button-row'>
+          <td colspan='2'>
+            <div style='float: right'> 
+              <input type='reset' value='Reset'/>
+            </div>
+			<input type="button" id="btn" onclick="loadImage()" value="Submit Inline"/><input type='submit'/>
+          </td>
+        </tr>
+      </table>
+    </form>
+</div>
+
+<div id="img" class="column-center"></div>
+<div class="column-right">
+    <h2>Examples</h2>
+    <div id='examples-div'>
+      <ul />
+    </div>
+</div>
+</div>
+  </body>
+</html>

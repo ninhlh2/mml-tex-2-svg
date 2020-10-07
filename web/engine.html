@@ -1,0 +1,29 @@
+<html>
+  <head>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			messageStyle: "none",
+			SVG: {
+				useGlobalCache: false, 
+				scale: 120
+			},
+		});
+	</script>
+    <script type="text/javascript" src="$mathjax_url"></script>
+    <script type="text/javascript" src="engine.js"></script>
+  </head>
+  <body>
+    <h1>RenderMath engine page</h1>
+    <p>TeX equation:</p>
+    <div id="math-latex">\({ \sum_{n=1}^\infty n } \)</div>
+    <p>MathML equation:</p>
+    <div id="math-mml">
+      <math>
+        <mfrac>
+          <mi>y</mi>
+          <mn>2</mn>
+        </mfrac>
+      </math>
+    </div>
+  </body>
+</html>
