@@ -1,3 +1,3 @@
 #!/bin/sh
 cd /web
-phantomjs main.js
+../phantomjs main.js
